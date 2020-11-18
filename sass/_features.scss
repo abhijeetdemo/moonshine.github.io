@@ -1,0 +1,106 @@
+.features {
+    grid-column: center-start / center-end;
+    margin: 10rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: none;
+        margin: 5rem 0;
+        grid-gap: 4.5rem;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        justify-items: center;
+        grid-row-gap: 4rem;
+        padding: 4rem 0;
+        cursor: pointer;
+        transition: all .2s ease-out;
+
+        &--1 {
+            background-color: $color-dark-2;
+        }
+
+        &--2 {
+            background-color: $color-light-2;
+        }
+
+        &--3 {
+            background-color: $color-dark-2;
+        }
+
+        /* &:hover {
+            box-shadow: var(--box-shadow-dark);
+            transform: translateY(-5px) scale(1.005) translateZ(0);
+        } */
+
+    }
+
+
+    &__img {
+        height: 18rem;
+        width: 18rem;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: var(--box-shadow-dark);
+        border: .35rem solid $color-light-1;
+        grid-column: 2 / 3;
+        animation: pulse-red 3s ease-in-out infinite;
+    }
+
+    &__count {
+        grid-column: 2 / 3;
+
+        &--1 {
+            color: $color-primary;
+        }
+
+        &--2 {
+            color: $color-secondary;
+        }
+
+        &--3 {
+            color: $color-primary;
+        }
+    }
+
+    &__text {
+        font-family: $font-primary;
+        font-size: $font-default;
+        grid-column: 2 / 3;
+
+        &--1 {
+            color: $color-light-2;
+        }
+    
+        &--2 {
+            color: $color-primary;
+        }
+    
+        &--3 {
+            color: $color-light-2;  
+        }
+    }
+
+    &__card:hover &__count--2 {
+        color: $color-primary;
+        text-shadow:0px 0px 5px $color-primary;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    &__card:hover &__count--1, &__card:hover &__count--3 {
+        color: $color-light-2;
+        text-shadow:0px 0px 5px $color-light-2;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+}

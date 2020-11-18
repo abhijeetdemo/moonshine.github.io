@@ -1,0 +1,67 @@
+.footer {
+    background-color: $color-secondary;
+    grid-column: full-start / full-end;
+
+    padding: 4.5rem 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    /*justify-items: center; // use in small device. responsive*/
+    align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        padding: 2.5rem 3rem;
+    }
+
+    &__copyright {
+        color: $color-light-2;
+        font-family: $font-display;
+        font-size: $font-medium;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        span {
+            color: $color-primary;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            margin-bottom: 1rem;
+        }
+    }
+
+
+    &__author-text {
+        font-family: inherit;
+        text-transform: lowercase;
+        font-size: $font-default;
+        letter-spacing: .2rem;
+    }
+
+    &__btn {
+        border: 0;
+        border-radius: 10rem;
+        padding: 1rem 2.5rem;
+        color: $color-dark-2;
+        background-color: $color-light-2;
+        font-size: $font-small;
+        font-family: $font-display;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all .2s;
+        justify-self: end; // remove this in small device/resp
+
+        @media only screen and (max-width: $bp-small) {
+            justify-self: center;
+        }
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-light-2;
+            box-shadow: var(--box-shadow-dark);
+            transform: translateY(-3px);
+        }
+    }
+}

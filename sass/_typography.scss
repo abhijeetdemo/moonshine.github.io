@@ -1,0 +1,19 @@
+// Font Sizes
+$font-large: 4.5rem;
+$font-medium: 3rem;
+$font-small: 2.5rem;
+$font-default: 1.6rem;
+
+%heading {
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 8em;
+    line-height: 1;
+
+    &--light {color: $color-light-2;}
+    &--dark {color: $color-dark-2;}
+}

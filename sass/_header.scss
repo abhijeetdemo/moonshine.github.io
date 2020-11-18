@@ -1,0 +1,49 @@
+.header {
+    background-color: $color-dark-2;
+    grid-column: full-start / full-end;
+    grid-row: 1 / 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    padding: 0 3rem;
+    // for testing purpose
+
+    &__logo {
+        height: 6rem;
+        justify-self: start;
+    }
+
+    &__title {
+        font-size: $font-large;
+        font-family: $font-display;
+        color: $color-light-2;
+        text-align: center;
+        text-transform: uppercase;
+        grid-column: 2 / 3;
+    }
+}
+
+.nav-btn {
+    border: none;
+    border-radius: 0;
+    background-color: $color-light-1;
+    height: 2px;
+    width: 4.5rem;
+
+    grid-column: 3 / -1;
+    justify-self: end;
+
+    &::before, &::after {
+        background-color: $color-light-1;
+        height: 2px;
+        width: 4.5rem;
+        content: "";
+        display: block;
+    }
+
+    &::before { transform: translateY(-1rem); }
+    &::after { transform: translateY(1rem); }
+}
